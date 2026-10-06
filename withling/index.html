@@ -11,43 +11,18 @@
   h1 { font-size: 1.4rem; margin: 0 0 .25rem; }
   h2 { font-size: 1.1rem; margin: 2.5rem 0 .5rem; padding-top: .5rem; border-top: 1px solid; }
   h3 { font-size: 1rem; margin: 1.5rem 0 .25rem; }
-  .lang, footer { font-size: .9rem; }
-  .lang { float: right; }
+  footer { font-size: .9rem; }
   table { border-collapse: collapse; }
   td, th { border: 1px solid; padding: .25rem .5rem; text-align: left; vertical-align: top; }
   footer { margin-top: 3rem; }
-  body [lang="ko"] { display: none; }
-  html.ko body [lang="ko"] { display: block; }
-  html.ko body [lang="en"] { display: none; }
 </style>
-<noscript><style>body [lang="ko"] { display: block; }</style></noscript>
-<script>
-  (function () {
-    var pick = null;
-    try { pick = localStorage.getItem("lang"); } catch (e) {}
-    if (!pick) {
-      var ls = navigator.languages || [navigator.language || ""];
-      pick = String(ls[0] || "").toLowerCase().indexOf("ko") === 0 ? "ko" : "en";
-    }
-    if (pick === "ko") document.documentElement.className = "ko";
-    document.documentElement.lang = pick;
-  })();
-  function setLang(l) {
-    try { localStorage.setItem("lang", l); } catch (e) {}
-    document.documentElement.className = l === "ko" ? "ko" : "";
-    document.documentElement.lang = l;
-    return false;
-  }
-</script>
 </head>
 <body>
-<div class="lang"><a href="#" onclick="return setLang('en')">English</a> · <a href="#" onclick="return setLang('ko')">한국어</a></div>
 <h1>Withling</h1>
-<div lang="en">Last updated: 2026-10-06</div>
-<div lang="ko">최종 수정: 2026-10-06</div>
+<div>Last updated: 2026-10-06</div>
 
 <section id="safety">
-<div lang="en">
+<div>
 <h2>Safety protocol</h2>
 <p>The protocol Withling follows when a user expresses suicidal ideation, suicide or self-harm, published as required by California Business and Professions Code §22602 (SB 243).</p>
 <p><b>Companion chatbots may not be suitable for some minors.</b></p>
@@ -73,31 +48,6 @@
 <p>The check is part of the program code. It applies to every character, mode and setting, and cannot be turned off.</p>
 </div>
 
-<div lang="ko">
-<h2>안전 프로토콜</h2>
-<p>사용자가 자살 생각·자살·자해를 드러낼 때 Withling이 따르는 절차입니다. 미국 캘리포니아 비즈니스·직업법 §22602(SB 243)에 따라 공개합니다.</p>
-<p><b>컴패니언 챗봇은 일부 미성년자에게 적합하지 않을 수 있습니다.</b></p>
-
-<h3>1. 감지</h3>
-<p>사용자가 보내는 모든 메시지는 언어 모델에 전달되기 전에 프로그램이 검사합니다. 자살 생각이나 자해를 드러내는 메시지를 위기 신호로 봅니다.</p>
-
-<h3>2. 대응</h3>
-<ul>
-  <li>프로그램이 별도 안내 창을 띄워 위기 상담 창구를 안내합니다(3항). 안내 창에는 캐릭터가 AI이며 전문 상담을 대신할 수 없다는 문장이 함께 표시됩니다.</li>
-  <li>그 답변에 한해 캐릭터에게 자해를 부추기거나 방법을 말하지 말 것, 상황을 가볍게 넘기지 말 것을 지시합니다.</li>
-</ul>
-
-<h3>3. 안내하는 상담 창구</h3>
-<table>
-  <tr><th>지역</th><th>표시 내용</th></tr>
-  <tr><td>대한민국</td><td>자살예방 상담전화 109 · 정신건강 위기상담전화 1577-0199 · 생명의전화 1588-9191. 응급: 119.</td></tr>
-  <tr><td>미국</td><td>988 Suicide &amp; Crisis Lifeline — 전화·문자 988(24시간). 응급: 911.</td></tr>
-  <tr><td>모든 지역</td><td>Find A Helpline — <a href="https://findahelpline.com">findahelpline.com</a>(항상 표시).</td></tr>
-</table>
-
-<h3>4. 끌 수 없음</h3>
-<p>검사는 프로그램 코드에 들어 있습니다. 모든 캐릭터·모드·설정에 적용되며 끌 수 없습니다.</p>
-</div>
 </section>
 
 <footer>
